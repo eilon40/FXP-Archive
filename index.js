@@ -42,7 +42,7 @@ const discordInstance = ky.create({
 });
 const db = new DatabaseSync('mydatabase.sqlite');
 const getAll = query => db.prepare(query).all();
-const sendMsg = (content, channel) => content.length > 0 && discordInstance.post(channel, { content, flags: 4 });
+const sendMsg = (content, channel) => content.length > 0 && discordInstance.post(channel, { json: { content, flags: 4 }});
 
 db.exec(`
     CREATE TABLE IF NOT EXISTS staff_tracking (
@@ -226,4 +226,5 @@ runIf(settings.staff_tracking, async function(hookId) {
 
     console.log('Users who joined:', newRows);
     console.log('Users who left:', toLeave);
+
 });
