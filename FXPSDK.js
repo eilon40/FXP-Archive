@@ -100,7 +100,7 @@ class Member {
     get() {
         return this.client.request("/member", this.params);
     }
-
+    // Loading using infinite scroll or SPA 
     visitorMessages(page = 1, prePage = 10) {
         return this.client.request("/member", {
             ...this.params,
@@ -109,7 +109,7 @@ class Member {
             pp: prePage,
         });
     }
-
+    // Loading using infinite scroll or SPA
     friends(page = 1, prePage = 10) {
         return this.client.request("/member", {
             ...this.params,
