@@ -42,6 +42,7 @@ export class FXPSDK {
           "username": "Middleware",
           "role": "usermarkup respectuser",
           "is_online": false,
+          "is_banned": false,
           "sex": "זכר",
           "avatar_url": "https://i.imagesup.co/images2/749522_31cdd167-5f74-4db7-97d8-e30575ae0059.jpg",
           "display_name": "",
