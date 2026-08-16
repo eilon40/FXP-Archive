@@ -36,6 +36,39 @@ export class FXPSDK {
     }
 
     member(query) {
+        /*
+        {
+          "user_id": 749522,
+          "username": "Middleware",
+          "role": "usermarkup respectuser",
+          "is_online": false,
+          "sex": "זכר",
+          "avatar_url": "https://i.imagesup.co/images2/749522_31cdd167-5f74-4db7-97d8-e30575ae0059.jpg",
+          "display_name": "",
+          "join_date": "03-10-2011",
+          "title": "🕯️ You'll always be remembered",
+          "signature": "",
+          "post_count": 11622,
+          "like_count": 2272,
+          "follower_count": 4,
+          "biography": "",
+          "interests": "",
+          "profession": "",
+          "marital_status": "לא פנוי/ה לקשר",
+          "interested_in": "מוסתר",
+          "residential_area": "",
+          "city_residence": "",
+          "friends_count": 0,
+          "friend_messages_count": 0,
+          "messages_per_day": 2.14,
+          "last_seen": "16-08-2026 21:30",
+          "home_page": "",
+          "is_status_hidden": false,
+          "can_pm": false,
+          "friends": [],
+          "messages": []
+        }
+        */
         return new Member(this, query);
     }
 
