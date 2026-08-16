@@ -36,6 +36,34 @@ export class FXPSDK {
     }
 
     member(query) {
+        return new Member(this, query);
+    }
+
+    // thread(query) {
+    //     return new Thread(this, query);
+    // }
+
+    // private(query = {}) {
+    //     return new Private(this, query);
+    // }
+
+    // forum(query) {
+    //     return new Forum(this, query);
+    // }
+}
+
+class Member {
+    constructor(client, query = {}) {
+        this.client = client;
+        this.query = query;
+
+        this.params = {
+            u: this.query.userId,
+            username: this.query.username,
+        };
+    }
+
+    get() {
         /*
         {
           "user_id": 749522,
@@ -70,34 +98,6 @@ export class FXPSDK {
           "messages": []
         }
         */
-        return new Member(this, query);
-    }
-
-    // thread(query) {
-    //     return new Thread(this, query);
-    // }
-
-    // private(query = {}) {
-    //     return new Private(this, query);
-    // }
-
-    // forum(query) {
-    //     return new Forum(this, query);
-    // }
-}
-
-class Member {
-    constructor(client, query = {}) {
-        this.client = client;
-        this.query = query;
-
-        this.params = {
-            u: this.query.userId,
-            username: this.query.username,
-        };
-    }
-
-    get() {
         return this.client.request("/member", this.params);
     }
     // Loading using infinite scroll or SPA 
